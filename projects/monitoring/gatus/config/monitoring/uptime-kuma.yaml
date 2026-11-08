@@ -1,0 +1,6 @@
+endpoints:
+  - name: uptime-kuma
+    group: monitoring
+    url: http://uptime-kuma:3001
+    interval: 30s
+    conditions: ['[STATUS] < 400']

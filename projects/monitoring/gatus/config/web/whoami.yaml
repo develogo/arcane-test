@@ -1,0 +1,6 @@
+endpoints:
+  - name: whoami
+    group: web
+    url: http://host.docker.internal:8082
+    interval: 30s
+    conditions: ['[STATUS] == 200']

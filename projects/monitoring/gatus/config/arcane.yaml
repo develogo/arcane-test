@@ -1,0 +1,5 @@
+endpoints:
+  - name: arcane
+    url: http://host.docker.internal:3552
+    interval: 30s
+    conditions: ['[STATUS] < 400']

@@ -1,0 +1,6 @@
+endpoints:
+  - name: nginx
+    group: web
+    url: http://host.docker.internal:8081
+    interval: 30s
+    conditions: ['[STATUS] == 200']

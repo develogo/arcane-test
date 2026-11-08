@@ -1,0 +1,6 @@
+endpoints:
+  - name: adminer
+    group: database
+    url: http://host.docker.internal:8084
+    interval: 30s
+    conditions: ['[STATUS] == 200']

@@ -1,0 +1,22 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:2
+    ports:
+      - '3001:3001'
+    volumes:
+      - kuma-data:/app/data
+    restart: unless-stopped
+
+  gatus:
+    image: twinproduction/gatus:stable
+    ports:
+      - '8086:8080'
+    environment:
+      GATUS_CONFIG_PATH: /config
+    # one YAML per app in ./gatus/config (read recursively)
+    volumes:
+      - ./gatus/config:/config:ro
+    restart: unless-stopped
+
+volumes:
+  kuma-data:
